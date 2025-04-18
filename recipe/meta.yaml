@@ -12,16 +12,16 @@ source:
 
 build:
   number: 0
-  noarch: python
+  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - pdm-backend
     - pip
   run:
-    - python >={{ python_min }}
+    - python
     - anyio >=4.7.0
     - starlette >=0.41.3
 test:
@@ -31,7 +31,7 @@ test:
     - pip check
   requires:
     - pip
-    - python {{ python_min }}
+    - python
 
 about:
   home: https://github.com/sysid/sse-starlette
