@@ -31,7 +31,6 @@ test:
     - pip check
   requires:
     - pip
-    - python
 
 about:
   home: https://github.com/sysid/sse-starlette
